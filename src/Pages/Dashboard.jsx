@@ -101,7 +101,7 @@ const [transactions, setTransactions] = useState(() => {
             </Link>
           </div>
           <div className="graphs">
-            <div style={{ width: "300px" }}>
+            <div style={{ width: "300px"}} >
               <Doughnut
                 data= {{
                     datasets: [{
