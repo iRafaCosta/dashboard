@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Condensed", serif;
+}
+
+
+body{
+    background-color: #f7e9dd;
+}
+
+header{
+    width: 300px;
+    background: #262626;
+    height: 100vh;
+    border-top-right-radius: 15px;
+    position: absolute;
+}
+
+.title{
+    color: #fefefe;
+    font-size: 2.5rem;
+    padding: 1rem;
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+
+.item-menu a{
+    list-style: none;
+    text-decoration: none;
+    color: #fefefece;
+    padding:1rem;
+    display: flex;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transition: .4s;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.item-menu a:hover{
+    background-color: #fff ;
+    color: #262626;
+}
+
+.overview{
+    margin-left: 20rem;
+    height: 100vh;
+}
+
+.overview h1{
+    font-size: 2.75rem;
+    padding: 1rem;
+}
+
+.values{
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+}
+
+.balance{
+    background: #262626;
+    color: #fefefece;
+    padding: 1.5rem 1rem;
+    width: 300px;
+    border-radius: 15px;
+    margin-left: 1rem;
+    margin-right: 5rem;
+}
+
+.balance h4{
+    font-weight: 300;
+    margin-bottom: 10px;
+    font-size: 1.15rem;
+}
+
+.balance-value{
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.item{
+    padding: 1.5rem 1rem;
+    width: 300px;
+    border-radius: 15px;
+    margin-right: 5rem;
+    background-color: #fefefe;
+    color: #262626;
+}
+
+.item h4{
+    font-weight: 300;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.income{
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.expenses{
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.overview-bottom{
+    display: grid;
+    grid-template-columns: 900px 500px;
+    gap: 2rem;
+    margin: 2rem;
+}
+
+.pots{
+    background: #fefefe;
+    color: #262626;
+    border-radius: 15px;
+    padding: 1.5rem;
+    grid-row: 1 / 2;
+}
+
+.all-pots{
+    display: flex;
+    gap: 2rem;
+}
+
+.headline{
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headline h4{
+    font-size: 1.5rem;
+}
+
+.headline a{
+    text-decoration: none;
+    color: #585757;
+    font-size: .85rem;
+}
+
+.total-pots{
+    background-color: #dbd2d2;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.total-pots i{
+    font-size: 2.25rem;
+    padding: 1rem;
+}
+
+.infos{
+    padding: .95rem;
+}
+
+.infos h4{
+    color: #585757;
+    margin-bottom: .5rem;
+    text-align: left;
+}
+
+.infos span{
+    color: #262626;
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+.rest-pots{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 1rem;
+}
+
+.items{
+    padding:.5rem 1rem;
+    border-radius: 1px;
+}
+
+.items h5{
+    font-weight: 300;
+    margin-bottom: .1rem;
+    color: #585757;
+}
+
+.items span{
+    font-weight: 600;
+}
+
+
+.budgets{
+    background-color: #fefefe;
+    border-radius: 15px;
+    padding: 1.5rem;
+    grid-row: 1 / 3;
+    grid-column: 2;
+}
+
+.graphs{
+    display: flex;
+    gap: 4rem;
+}
+
+.graph-content{
+    display: grid;
+    gap: 1rem;
+}
+
+.transaction{
+    background-color: #fefefe;
+    border-radius: 15px;
+    padding: 1.5rem;
+    grid-column: 1;
+    grid-row: 2/4;
+    height: 445px;
+    overflow: hidden;
+}
+
+.new-transaction{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0 ;
+    border-bottom: 1px solid #868585;
+}
+
+.new-transaction:nth-child(5){
+    border: none;
+    margin-bottom: -12px;
+}
+
+.new-transaction h4{
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.value-data{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: .3rem;
+}
+
+.transaction-value{
+    font-weight: 600;
+}
+
+.data-transaction{
+    color: #868585;
+}
+
+
+.bill-value{
+    font-weight: 600;
+}
+
+.credit{
+    color: rgb(5, 112, 5);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.debit{
+    color: rgb(189, 2, 2);
+}
+
+.newPots{
+    margin-top: 3rem;
+    background-color: #fefefe;
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.newPots h3{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.input-box label{
+    margin-bottom: .2rem;
+}
+
+.input-box input{
+    padding: .65rem;
+    border-radius: 9px;
+    width: 400px;
+    border: none;
+    background-color: #dbd2d2;
+}
+
+form button{
+    padding: .6rem;
+    margin-top: 1.2rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.other-section{
+    margin-left: 21rem;
+    padding: 1rem;
+}
+
+.table-graph{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+table{
+    border-collapse: collapse;
+    margin-top: 3rem;
+    width: 60%;
+}
+
+thead{
+    background-color: rgb(129, 104, 104);
+}
+
+th, td{
+    padding: 1rem;
+    text-align: left;
+}
+
+tr:nth-child(even){
+    background-color: rgb(219, 182, 182);
+}
+
+.delete-btn{
+    padding: .75rem;
+    border-radius: 5px;
+    background-color: rgb(189, 2, 2);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+select{
+    margin-top: 1rem;
+    padding: .7rem;
+    width: 200px;
+}
