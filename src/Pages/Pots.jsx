@@ -43,7 +43,7 @@ export default function Transactions() {
 
     try {
       const validPots = new CreateBudget(item);
-      addTransactions(validPots);
+      addPots(validPots);
       setItem(defaultPots);
       alert("Porquinho cadastrado!");
     } catch (error) {
