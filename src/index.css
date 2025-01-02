@@ -369,6 +369,9 @@ select{
         justify-content: space-around;
         border-top-right-radius: 0px;
     }
+    .other-section{
+        padding-top: 7rem;
+    }
     .item-menu{
         display: flex;
         align-items: center;
@@ -404,6 +407,9 @@ select{
     .transaction{
         width: 725px;
         margin-bottom: 2rem;
+    }
+    .other-section{
+        margin-left: 3rem;
     }
 }
 
@@ -441,11 +447,11 @@ select{
         margin: 0;
     }
     .item{
-        max-width: 100px;
+        max-width: 115px;
         margin:0 1rem 0 0 ;
     }
     .balance{
-        max-width: 100px;
+        max-width: 115px;
         margin-right: 1rem;
     }
     .item span{
@@ -459,5 +465,11 @@ select{
     }
     .balance h4{
         font-size: 1rem;
+    }
+    .other-section{
+        margin-left: 1rem;
+    }
+    .input-box input{
+        width: 275px;
     }
 }
