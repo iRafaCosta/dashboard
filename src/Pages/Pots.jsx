@@ -1,30 +1,31 @@
 import { useState } from "react";
 import DeleteButton from "../Components/DeleteButton";
-import CreateTransaction, { TYPE } from "../entities/CreateTransaction";
+import CreateBudget from "../entities/CreateBudget"
+
 
 export default function Transactions() {
-  const defaultTransaction = {
+  const defaultPots = {
     name: "",
     value: 0,
   };
 
-  const [item, setItem] = useState(defaultTransaction);
+  const [item, setItem] = useState(defaultPots);
 
-  const [transactions, setTransactions] = useState(() => {
-    const storageTransaction = localStorage.getItem("obc-transaction");
-    if (!storageTransaction) return [];
-    const transactions = JSON.parse(storageTransaction);
-    return transactions;
+  const [pots, setPots] = useState(() => {
+    const storagePots = localStorage.getItem("obc-pots");
+    if (!storagePots) return [];
+    const pots = JSON.parse(storagePots);
+    return pots;
   });
 
-  const addTransactions = (transaction) => {
-    setTransactions((currentState) => {
-      const updateTransactions = [transaction, ...currentState];
+  const addPots = (pot) => {
+    setPots((currentState) => {
+      const updatePots = [pot, ...currentState];
       localStorage.setItem(
-        "obc-transaction",
-        JSON.stringify(updateTransactions)
+        "obc-pots",
+        JSON.stringify(updatePots)
       );
-      return updateTransactions;
+      return updatePots;
     });
   };
 
@@ -41,10 +42,10 @@ export default function Transactions() {
     ev.preventDefault();
 
     try {
-      const validTransaction = new CreateTransaction(item);
-      addTransactions(validTransaction);
-      setItem(defaultTransaction);
-      alert("Transação cadastrada!");
+      const validPots = new CreateBudget(item);
+      addTransactions(validPots);
+      setItem(defaultPots);
+      alert("Porquinho cadastrado!");
     } catch (error) {
       console.log(error.message);
     }
@@ -53,7 +54,7 @@ export default function Transactions() {
   return (
     <>
       <div className="other-section">
-        <h1>Cadastro de Transações</h1>
+        <h1>Cadastro de Porquinho</h1>
         <form onSubmit={handleSubmit}>
           <div className="input-box">
             <label htmlFor="name">Nome:</label>
@@ -75,25 +76,6 @@ export default function Transactions() {
               required
             />
           </div>
-           <div className="input-box">
-                    <label htmlFor="type">Categoria:</label>
-                    <select 
-                    name="type" 
-                    id="type"
-                    required
-                    value={item.type}
-                    onChange={handleChange}
-                    >
-                        <option value="" defaultChecked>Seleciona uma categoria...</option>
-                        {TYPE.map((type) => (
-                            <option
-                            key={type}
-                            value={type}
-                            defaultChecked = {item.type === type}
-                            >{type}</option>
-                        ))}
-                    </select>
-          </div>
           <button type="submit">Adicionar</button>
         </form>
 
@@ -107,20 +89,16 @@ export default function Transactions() {
             </tr>
           </thead>
           <tbody>
-            {transactions.map((item) => (
+            {pots.map((item) => (
               <tr key={item.id}>
                 <td>{item.name}</td>
-                <td
-                  className={`${item.type === "Entrada" ? "credit" : "debit"} `}
-                >
-                  R$ {item.value}
-                </td>
+                <td>R$ {item.value}</td>
                 <td>{item.createdAt}</td>
                 <td>
                   <DeleteButton
                     name={item.name}
                     id={item.id}
-                    library={"obc-transaction"}
+                    library={"obc-pots"}
                   />
                 </td>
               </tr>

@@ -51,7 +51,7 @@ const [transactions, setTransactions] = useState(() => {
 
   return (
     <section className="overview">
-      <h1>Overview</h1>
+      <h1>Visão Geral</h1>
       <div className="values">
         <div className="balance">
           <h4>Saldo em Conta</h4>
