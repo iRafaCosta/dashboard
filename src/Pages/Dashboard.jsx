@@ -31,9 +31,9 @@ const [transactions, setTransactions] = useState(() => {
   const [total,setTotal] = useState(0)
 
   useEffect(() => {
-    const amountExpense = transactions.filter((item) => item.type !== "Entrada").map((transaction) => +transaction.value);
+    const amountExpense = transactions.filter((item) => item.type === "Saída").map((transaction) => +transaction.value);
 
-      const amountIncome = transactions.filter((item) => item.type === 'Entrada').map((transaction) => +transaction.value);
+      const amountIncome = transactions.filter((item) => item.type === "Entrada").map((transaction) => +transaction.value);
 
       const expense = amountExpense.reduce((sum, num) => sum + num, 0).toFixed(2);
       const income = amountIncome.reduce((sum, num) => sum + num, 0).toFixed(2);
